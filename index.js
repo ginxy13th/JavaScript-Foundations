@@ -44,13 +44,6 @@ console.log(monthlyRate);
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 function mortgageCalculator(){
-    let principal = 200000;
-    let interestRate = 0.05;
-    let years = 30;
-    let name = 'elizabeth';
-    let monthlyInterestRate = (interestRate/12);
-    let period = (years*12);
-    let monthlyRate = (principal * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, period))) / (Math.pow(1 + monthlyInterestRate, period) - 1)
     return `${name}, your monthly rate is ${monthlyRate}`;
 }
 console.log(mortgageCalculator(name, monthlyRate));
@@ -61,7 +54,6 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 function mortgageCalculator(principal, interestRate, years){
-    let name = 'elizabeth';
     let monthlyInterestRate = (interestRate/12);
     let period = (years*12);
     let monthlyRate = (principal * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, period))) / (Math.pow(1 + monthlyInterestRate, period) - 1)
@@ -77,7 +69,6 @@ Then, add control flow within your function such that IF creditScore is above 74
 Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
 */
 function mortgageCalculator(principal, interestRate, years, creditScore){
-    let name = 'elizabeth';
     let monthlyInterestRate = (interestRate/12);
     let period = (years*12);
     let monthlyRate = (principal * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, period))) / (Math.pow(1 + monthlyInterestRate, period) - 1)
@@ -108,7 +99,15 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.055, your monthly rate is $1136"
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
+function variableInterestRate(principal, interestRate, years){
+    let name = 'elizabeth';
+    let monthlyInterestRate = (interestRate/12);
+    let period = (years*12);
+    let monthlyRate = (principal * (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, period))) / (Math.pow(1 + monthlyInterestRate, period) - 1)
+    for (interestRate = 0.5; interestRate < 9; interestRate+0.005)
 
+    return `${name}, with an interest rate of ${interestRate}, your monthly rate is ${monthlyRate}`;
+}
 
 
 
